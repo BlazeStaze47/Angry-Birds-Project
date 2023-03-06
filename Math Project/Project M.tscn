@@ -1,0 +1,308 @@
+[gd_scene load_steps=26 format=3 uid="uid://ucao168o6g2c"]
+
+[ext_resource type="Texture2D" uid="uid://dwuxh4vqbol2u" path="res://windows_xp_bliss-wide.jpg" id="1_bo71j"]
+[ext_resource type="Texture2D" uid="uid://demb18iih5xct" path="res://image_2023-03-02_201322950-removebg-preview.png" id="2_5eypd"]
+[ext_resource type="PhysicsMaterial" uid="uid://l66uda66oj78" path="res://Project M.tres" id="3_1oivj"]
+[ext_resource type="Script" path="res://Birb2.gd" id="3_6fp4x"]
+[ext_resource type="Texture2D" uid="uid://cbfipnumfeng5" path="res://yellow-removebg-preview.png" id="3_gl5ns"]
+[ext_resource type="Texture2D" uid="uid://cypl3wpit4tms" path="res://Slingshot_29.webp" id="4_p4x4u"]
+[ext_resource type="Texture2D" uid="uid://dm4fnelbxl5h" path="res://Wood beam.png" id="5_qkppy"]
+[ext_resource type="Texture2D" uid="uid://cjkh4gv7ytc3s" path="res://Wood triangle.png" id="8_1gt4f"]
+[ext_resource type="Texture2D" uid="uid://clmioj1etsu6f" path="res://Wood box.png" id="9_8d4ks"]
+[ext_resource type="Texture2D" uid="uid://qxnjsg30ictw" path="res://Pig.png" id="10_txmiw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wd03o"]
+size = Vector2(1183, 20)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h1fpd"]
+friction = 3.0
+bounce = 0.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2v8k"]
+radius = 32.249
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_783tb"]
+radius = 27.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbutt"]
+size = Vector2(13.5, 54.5)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sfeof"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bfe5"]
+size = Vector2(169, 20)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vlgwc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyjfm"]
+size = Vector2(169, 20)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aea0j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37tl8"]
+size = Vector2(170.5, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5n811"]
+size = Vector2(6, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abj4m"]
+size = Vector2(44, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hi7p"]
+size = Vector2(51, 46)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vc64i"]
+radius = 48.0104
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576.5, 326)
+scale = Vector2(0.601563, 0.545)
+texture = ExtResource("1_bo71j")
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(571, 643)
+shape = SubResource("RectangleShape2D_wd03o")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
+
+[node name="Birb 1" type="RigidBody2D" parent="."]
+mass = 4.0
+physics_material_override = SubResource("PhysicsMaterial_h1fpd")
+linear_velocity = Vector2(450, -1000)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Birb 1"]
+position = Vector2(60.5, 526)
+scale = Vector2(0.308, 0.28)
+texture = ExtResource("2_5eypd")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Birb 1"]
+position = Vector2(66, 530)
+shape = SubResource("CircleShape2D_g2v8k")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
+
+[node name="Birb 2 Press <ENTER>" type="RigidBody2D" parent="."]
+position = Vector2(9, 0)
+mass = 4.0
+physics_material_override = ExtResource("3_1oivj")
+script = ExtResource("3_6fp4x")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Birb 2 Press <ENTER>"]
+position = Vector2(18, 589.75)
+scale = Vector2(0.25, 0.244012)
+texture = ExtResource("3_gl5ns")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Birb 2 Press <ENTER>"]
+position = Vector2(20, 598)
+shape = SubResource("CircleShape2D_783tb")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
+
+[node name="Slingshot" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Slingshot"]
+position = Vector2(66.25, 574.5)
+scale = Vector2(0.512422, 0.443333)
+texture = ExtResource("4_p4x4u")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slingshot"]
+position = Vector2(87.75, 605.25)
+shape = SubResource("RectangleShape2D_xbutt")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
+
+[node name="Beam 1" type="RigidBody2D" parent="."]
+mass = 4.0
+physics_material_override = SubResource("PhysicsMaterial_sfeof")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Beam 1"]
+position = Vector2(1037.5, 547.5)
+rotation = 1.5708
+texture = ExtResource("5_qkppy")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Beam 1"]
+position = Vector2(1037.5, 547.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_8bfe5")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
+
+[node name="Beam 2" type="RigidBody2D" parent="."]
+mass = 4.0
+physics_material_override = SubResource("PhysicsMaterial_vlgwc")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Beam 2"]
+position = Vector2(888.5, 547.5)
+rotation = 1.5708
+texture = ExtResource("5_qkppy")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Beam 2"]
+position = Vector2(889, 547)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_qyjfm")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
+
+[node name="Beam 3" type="RigidBody2D" parent="."]
+mass = 4.0
+physics_material_override = SubResource("PhysicsMaterial_aea0j")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Beam 3"]
+position = Vector2(962, 452)
+texture = ExtResource("5_qkppy")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Beam 3"]
+position = Vector2(962.25, 452)
+shape = SubResource("RectangleShape2D_37tl8")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
+
+[node name="Triangle 1" type="RigidBody2D" parent="."]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Triangle 1"]
+position = Vector2(958, 509)
+scale = Vector2(0.538793, 0.561751)
+texture = ExtResource("8_1gt4f")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triangle 1"]
+position = Vector2(901, 415.5)
+shape = SubResource("RectangleShape2D_5n811")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Triangle 1"]
+position = Vector2(901, 433.5)
+shape = SubResource("RectangleShape2D_abj4m")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
+
+[node name="Triangle 2" type="RigidBody2D" parent="."]
+position = Vector2(124, 1)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Triangle 2"]
+position = Vector2(958, 509)
+scale = Vector2(0.538793, 0.561751)
+texture = ExtResource("8_1gt4f")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triangle 2"]
+position = Vector2(901, 415.5)
+shape = SubResource("RectangleShape2D_5n811")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Triangle 2"]
+position = Vector2(901, 433.5)
+shape = SubResource("RectangleShape2D_abj4m")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
+
+[node name="Beam 4" type="RigidBody2D" parent="."]
+position = Vector2(1, -71)
+mass = 4.0
+physics_material_override = SubResource("PhysicsMaterial_aea0j")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Beam 4"]
+position = Vector2(962, 452)
+texture = ExtResource("5_qkppy")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Beam 4"]
+position = Vector2(962.25, 452)
+shape = SubResource("RectangleShape2D_37tl8")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
+
+[node name="Square 1" type="RigidBody2D" parent="."]
+position = Vector2(922, 328)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Square 1"]
+position = Vector2(-17.5, 18.5)
+scale = Vector2(0.583333, 0.559524)
+texture = ExtResource("9_8d4ks")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Square 1"]
+position = Vector2(-17.5, 18)
+shape = SubResource("RectangleShape2D_5hi7p")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
+
+[node name="Square 2" type="RigidBody2D" parent="."]
+position = Vector2(1040, 328)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Square 2"]
+position = Vector2(-17.5, 18.5)
+scale = Vector2(0.583333, 0.559524)
+texture = ExtResource("9_8d4ks")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Square 2"]
+position = Vector2(-17.5, 18)
+shape = SubResource("RectangleShape2D_5hi7p")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
+
+[node name="Beam 5" type="RigidBody2D" parent="."]
+position = Vector2(1511, -725)
+rotation = 1.5708
+mass = 4.0
+physics_material_override = SubResource("PhysicsMaterial_sfeof")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Beam 5"]
+position = Vector2(1037.5, 547.5)
+rotation = 1.5708
+texture = ExtResource("5_qkppy")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Beam 5"]
+position = Vector2(1037.5, 547.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_8bfe5")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
+
+[node name="Pig" type="RigidBody2D" parent="."]
+position = Vector2(963, 533)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Pig"]
+position = Vector2(4, 40)
+scale = Vector2(0.258841, 0.262245)
+texture = ExtResource("10_txmiw")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pig"]
+position = Vector2(0, 51)
+shape = SubResource("CircleShape2D_vc64i")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
